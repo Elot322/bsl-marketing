@@ -12,30 +12,46 @@
         <img
           src="/logo.svg"/>
         <p
-          class="font-semibold mt-5">Эксплуатация объектов</p>
+          class="font-semibold mt-5 text-xl">Эксплуатация объектов</p>
         <p
-          class="font-semibold">недвижимости</p>
+          class="font-semibold text-xl">недвижимости</p>
       </div>
       <div>
-        <p>Меню</p>
         <p
-          class="font-semibold mt-6">О продукте</p>
+          class="text-2xl mb-6">
+          Меню
+        </p>
         <p
-          class="font-semibold mt-6">Преимущества</p>
+          class="font-semibold mt-6 text-xl cursor-pointer"
+          @click="onLinkClick('interaction')">Функционал</p>
         <p
-          class="font-semibold mt-6">Пользователи</p>
+          class="font-semibold mt-6 text-xl cursor-pointer"
+          @click="onLinkClick('effects')">Эффекты</p>
+        <p
+          class="font-semibold mt-6 text-xl cursor-pointer"
+          @click="onAboutAppClick">Возможности системы</p>
+        <p
+          class="font-semibold mt-6 text-xl cursor-pointer"
+          @click="onRPClick">Руководство пользователя</p>
       </div>
       <div>
-        <p>Контакты</p>
+        <p
+          class="text-2xl">Контакты</p>
         <div
-          class="flex mt-6 gap-2">
+          class="flex mt-6 gap-2 items-center">
           <img
-            src="/footer-call.svg"/>
+            class="w-[24px] h-[24px]"
+            src="/footer-mail.svg"/>
+          <p
+            class="font-semibold text-xl">support@bsl.fm</p>
         </div>
         <div
-          class="flex mt-6 gap-2">
+          class="flex mt-6 gap-2 items-center">
           <img
-            src="/footer-mail.svg"/>
+            class="w-[24px] h-[24px]"
+            src="/footer-call.svg"/>
+          <p
+            class="font-semibold text-xl">+7 (495) 532-02-59</p>
         </div>
       </div>
     </div>
@@ -48,5 +64,17 @@
 </template>
 
 <script setup>
+const emits = defineEmits(['link-clicked'])
 
+function onLinkClick(name) {
+  emits('link-clicked', name)
+}
+
+function onAboutAppClick() {
+  window.open('https://disk.yandex.ru/i/4zagX_5TMUtUuA', '_blank')
+}
+
+function onRPClick() {
+  window.open('https://disk.yandex.ru/d/iKCyL-6TREtZLg', '_blank')
+}
 </script>

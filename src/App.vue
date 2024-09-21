@@ -1,57 +1,62 @@
 <template>
   <Layout>
     <div
-      class="w-full flex flex-col gap-16 mb-5">
-      <Header
-        @link-clicked="scrollToLink"/>
-      <div
-        ref="about">
-        <MainBlock/>
-      </div>
-        <MainAboutCompany/>
-      <div
-        ref="users">
-        <ForWhom/>
+      class="flex flex-col gap-[76px]">
+      <div>
+        <Header
+          @link-clicked="scrollToLink"/>
+        <div
+          class="mt-3"
+          ref="about">
+          <MainBlock/>
+        </div>
       </div>
       <div
-        ref="capability">
-        <Capability/>
+        ref="effects">
+        <EffectsBlock/>
       </div>
-      <DocFm/>
-      <Advantages/>
       <div
-        ref="contacts">
-        <Footer/>
+        ref="interaction">
+        <InteractionBlock/>
+      </div>
+      <div
+        ref="price">
+        <CalculateBlock/>
+      </div>
+      <div
+        ref="footer">
+        <Footer
+          @link-clicked="scrollToLink"/>
       </div>
     </div>
   </Layout>
 </template>
 
 <script setup>
-import { ref, computed, nextTick, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 
 import Layout from './components/Layout.vue'
 import Header from './components/Header.vue'
 import MainBlock from './components/MainBlock.vue'
-import MainAboutCompany from './components/MainAboutCompany.vue'
-import ForWhom from './components/ForWhom.vue'
-import Capability from './components/Сapability.vue'
-import DocFm from './components/DocFm.vue'
-import Advantages from './components/Advantages.vue'
+import EffectsBlock from './components/EffectsBlock.vue'
+import InteractionBlock from './components/InteractionBlock.vue'
+import CalculateBlock from './components/CalculateBlock.vue'
 import Footer from './components/Footer.vue'
 
 // Определяем рефы для компонентов
 const about = ref(null)
-const users = ref(null)
-const capability = ref(null)
-const contacts = ref(null)
+const effects = ref(null)
+const interaction = ref(null)
+const price = ref(null)
+const footer = ref(null)
 
 const refs = computed( () => {
   return {
     about,
-    users,
-    capability,
-    contacts
+    effects,
+    interaction,
+    price,
+    footer
   }
 });
 
