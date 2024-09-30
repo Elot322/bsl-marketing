@@ -25,6 +25,7 @@
         <p class="overflow-hidden">объектов недвижимости</p>
       </div>
       <div 
+        @click="onAuthClick"
         class="rounded-lg px-10 py-5 text-2xl text-center mt-[48px] bg-white text-[#27AEA2] cursor-pointer w-fit">
         Авторизироваться в BSL
       </div>
@@ -56,4 +57,8 @@
 
 <script setup>
 import MainBlockItem from './MainBlockItem.vue'
+
+function onAuthClick() {
+  window.open('https://bsl.fliptap.ru/auth/sign-in', '_blank')
+}
 </script>

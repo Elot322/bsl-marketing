@@ -33,7 +33,7 @@ const effectsBlockItems = ref([
   {
     title: 'SLA',
     description: 'Постоянное увеличение эффективности',
-    icon: '/effects-block-wallet.svg'
+    icon: '/effects-block-document.svg'
   }
 ])
 </script>
