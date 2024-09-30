@@ -50,7 +50,7 @@ function onLinkClick(name) {
 }
 
 function onAuthClick() {
-  window.open('https://bsl.fliptap.ru/auth/sign-in', '_blank')
+  window.open('https://app.bsl.fm/auth/sign-in', '_blank')
 }
 
 </script>
