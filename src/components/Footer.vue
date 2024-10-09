@@ -4,6 +4,7 @@
     <div
       class="absolute right-0 top-0">
       <img
+        class="w-[1500px]"
         src="/footer-background-up.svg"/>
     </div>
     <div
@@ -12,13 +13,13 @@
         <img
           src="/logo.svg"/>
         <p
-          class="font-semibold mt-5 text-xl">Эксплуатация объектов</p>
+          class="font-semibold mt-5 text-xl 2xl:text-2xl">Эксплуатация объектов</p>
         <p
-          class="font-semibold text-xl">недвижимости</p>
+          class="font-semibold text-xl 2xl:text-2xl">недвижимости</p>
       </div>
       <div>
         <p
-          class="text-2xl mb-6">
+          class="text-2xl 2xl:text-3xl mb-6">
           Меню
         </p>
         <p
@@ -36,7 +37,7 @@
       </div>
       <div>
         <p
-          class="text-2xl">Контакты</p>
+          class="text-2xl 2xl:text-3xl">Контакты</p>
         <div
           class="flex mt-6 gap-2 items-center">
           <img
@@ -58,6 +59,7 @@
     <div
       class="absolute left-0 bottom-0">
       <img
+        class="w-[900px]"
         src="/footer-background-down.svg"/>
     </div>
   </div>

@@ -9,8 +9,8 @@
           :src="icon"/>
       </div>
       <div>
-        <p class="text-2xl text-[#262626]">{{ title }}</p>
-        <p class="text-xl text-[#262626] font-medium max-w-[400px]">{{ description }}</p>
+        <p class="text-2xl 2xl:text-3xl text-[#262626]">{{ title }}</p>
+        <p class="text-xl 2xl:text-2xl text-[#262626] font-medium max-w-[400px]">{{ description }}</p>
       </div>
     </div>
   </div>

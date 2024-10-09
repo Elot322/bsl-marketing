@@ -1,7 +1,7 @@
 <template>
   <div>
     <p
-      class="text-center text-4xl mb-[44px]">
+      class="text-center text-4xl 2xl:text-[52px] 2xl:leading-normal mb-[44px]">
       Эффекты
     </p>
     <div>

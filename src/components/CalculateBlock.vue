@@ -1,20 +1,20 @@
 <template>
   <div>
     <p
-      class="text-center text-4xl mb-[44px]">
+      class="text-center text-4xl 2xl:text-[52px] 2xl:leading-normal mb-[44px]">
       Рассчитать стоимость ПО
     </p>
     <div
       class="rounded-xl bg-[#46BFB3] flex justify-between p-6 relative">
       <p
-        class="text-2xl text-white w-[467px]">
+        class="text-2xl 2xl:text-3xl text-white w-[467px] 2xl:w-[696px]">
         Стоимость определяется индивидуально для каждого из запросов
       </p>
       <img
-        class="absolute bottom-0 left-0"
+        class="absolute bottom-0 left-0 2xl:left-0 2xl:h-[400px]"
         src="/calculate-block-circle-left.svg"/>
       <img
-        class="absolute top-0 right-0 h-full"
+        class="absolute top-0 right-0 h-full 2xl:right-80"
         src="/calculate-block-circle-right.svg"/>
       <div
         class="absolute">

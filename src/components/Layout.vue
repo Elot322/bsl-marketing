@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-sceen px-2.5">
+    class="w-sceen">
       <slot/>
   </div>
 </template>

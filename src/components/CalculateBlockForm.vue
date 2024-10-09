@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white rounded-xl p-6 w-[556px]">
+    class="bg-white rounded-xl p-6 w-[556px] 2xl:w-[858px]">
     <div
       class="mb-6">
       <div
