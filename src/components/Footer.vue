@@ -4,7 +4,7 @@
     <div
       class="absolute right-0 top-0">
       <img
-        class="w-[1500px]"
+        class="2xl:w-[1500px]"
         src="/footer-background-up.svg"/>
     </div>
     <div
@@ -17,7 +17,8 @@
         <p
           class="font-semibold text-xl 2xl:text-2xl">недвижимости</p>
       </div>
-      <div>
+      <div
+        class="z-10">
         <p
           class="text-2xl 2xl:text-3xl mb-6">
           Меню
@@ -59,7 +60,7 @@
     <div
       class="absolute left-0 bottom-0">
       <img
-        class="w-[900px]"
+        class="2xl:w-[900px]"
         src="/footer-background-down.svg"/>
     </div>
   </div>
@@ -77,6 +78,6 @@ function onAboutAppClick() {
 }
 
 function onRPClick() {
-  window.open('https://disk.yandex.ru/d/iKCyL-6TREtZLg', '_blank')
+  window.open('/Руководство_пользователя_ПО_Building_Service_Life.pdf', '_blank')
 }
 </script>
