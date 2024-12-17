@@ -41,7 +41,7 @@
     <div
       class="cursor-pointer rounded-[8px] bg-[#46BFB3] text-white h-[63px] flex justify-center items-center text-2xl"
       @click="onSendRequestClick">
-      Отправить запрос
+      {{ sendButtonTitle }}
     </div>
   </div>
 </template>
@@ -62,9 +62,9 @@ const phone = ref('')
 
 const request = computed(() => {
   return {
-    name: name,
-    email: email,
-    phone: phone
+    name: name.value,
+    email: email.value,
+    phone: phone.value
   }
 })
 
@@ -85,6 +85,15 @@ function validateEmail() {
 }
 
 const isFormValid = computed(() => !nameError.value && !emailError.value)
+const isDisabled = ref(false)
+
+const sendButtonTitle = computed(() => {
+  if (isDisabled.value) {
+    return 'Отправка данных...'
+  } else {
+    return 'Отправить запрос'
+  }
+})
 
 function vaidateForm() {
   validateName()
@@ -93,12 +102,19 @@ function vaidateForm() {
 
 function onSendRequestClick() {
   vaidateForm()
-  if (isFormValid.value) {
+  if (isFormValid.value && !isDisabled.value) {
     try {
-      console.log(request.value)
-      emits('request:sended')
+      isDisabled.value = true
+      const requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+      fetch(`https://script.google.com/macros/s/AKfycbxhlQwX3O4wRhCwHfPJhLLCyNx2L2OJ6jaWxlnhGcbAXZtnbxn9B1xF-fi-p4EloGT4/exec?fio=${request.value.name}&email=${request.value.email}&phone=${request.value.phone}`, requestOptions).then(() => {
+        emits('request:sended')
+        isDisabled.value = false
+      })
     } catch(e) {
-
+      isDisabled.value = false
     }
   }
 }

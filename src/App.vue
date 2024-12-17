@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount} from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, onBeforeMount} from 'vue'
 
 import Layout from './components/Layout.vue'
 import Header from './components/Header.vue'
@@ -121,7 +121,7 @@ const handleScroll = () => {
   lastScrollY.value = scrollY;
 };
 
-onMounted(() => {
+onMounted(async () => {
   window.addEventListener('scroll', handleScroll);
 });
 

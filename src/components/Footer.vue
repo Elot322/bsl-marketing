@@ -74,7 +74,7 @@ function onLinkClick(name) {
 }
 
 function onAboutAppClick() {
-  window.open('https://disk.yandex.ru/i/4zagX_5TMUtUuA', '_blank')
+  window.open('/Описание_функциональных_характеристик_ПО_Building_Service_Life.pdf', '_blank')
 }
 
 function onRPClick() {
