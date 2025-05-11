@@ -37,9 +37,20 @@
           label="Телефон"
           placeholder="+7 (999) 999-99-99"/>
       </div>
+      <div class="flex items-center gap-2">
+          <input id="link-checkbox" type="checkbox" v-model="isChecked" class="w-12 h-12 text-[#46BFB3] bg-gray-100 accent-[#46BFB3] border-gray-300 rounded  focus:ring-[#46BFB3]">
+          <label for="link-checkbox">Нажимая на чекбокс, Вы подтверждаете 
+            <a href="/Согласие на обработку персональных данных.pdf" target="_blank" class="text-[#46BFB3]  hover:underline">согласие на обработку персональных данных</a> 
+            и ознакомлены с <a href="/Политика конфиденциальности в отношении обработки персональных данных.pdf" target="_blank" class="text-[#46BFB3] hover:underline">политикой конфиденциальности</a>
+          </label>
+      </div>
     </div>
     <div
-      class="cursor-pointer rounded-[8px] bg-[#46BFB3] text-white h-[63px] flex justify-center items-center text-2xl"
+      :class="{
+        ['rounded-[8px] h-[63px] flex justify-center items-center text-2xl']: true,
+        ['cursor-pointer bg-[#46BFB3] text-white h-[63px] flex justify-center items-center text-2xl']: isChecked,
+        ['cursor-not-allowed bg-[#c4c4c4] text-[#6a6a6a]']: !isChecked
+      }"
       @click="onSendRequestClick">
       {{ sendButtonTitle }}
     </div>
@@ -59,6 +70,7 @@ const nameError = ref(false)
 const email = ref('')
 const emailError = ref(false)
 const phone = ref('')
+const isChecked = ref(false)
 
 const request = computed(() => {
   return {
@@ -101,6 +113,8 @@ function vaidateForm() {
 }
 
 function onSendRequestClick() {
+  if (!isChecked.value) return;
+
   vaidateForm()
   if (isFormValid.value && !isDisabled.value) {
     try {
@@ -119,3 +133,7 @@ function onSendRequestClick() {
   }
 }
 </script>
+
+<style>
+
+</style>

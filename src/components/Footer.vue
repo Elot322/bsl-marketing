@@ -1,14 +1,14 @@
 <template>
   <div 
-    class="w-full h-[380px] rounded-xl bg-gradient-to-r from-[#3DA096] to-[#79E7DC] relative">
+    class="w-full rounded-xl bg-gradient-to-r from-[#3DA096] to-[#79E7DC] relative z-0">
     <div
-      class="absolute right-0 top-0">
+      class="absolute right-0 top-0 z-0">
       <img
         class="2xl:w-[1500px]"
         src="/footer-background-up.svg"/>
     </div>
     <div
-      class="grid grid-cols-3 gap-24 mt-20 ml-16 text-white">
+      class="grid grid-cols-3 gap-24 mt-14 ml-16 mb-5 relative z-10 text-white">
       <div>
         <img
           src="/logo.svg"/>
@@ -24,17 +24,23 @@
           Меню
         </p>
         <p
-          class="font-semibold mt-6 text-xl cursor-pointer"
+          class="font-semibold mt-3 text-xl cursor-pointer"
           @click="onLinkClick('interaction')">Функционал</p>
         <p
-          class="font-semibold mt-6 text-xl cursor-pointer"
+          class="font-semibold mt-3 text-xl cursor-pointer"
           @click="onLinkClick('effects')">Эффекты</p>
         <p
-          class="font-semibold mt-6 text-xl cursor-pointer"
-          @click="onAboutAppClick">Возможности системы</p>
+          class="font-semibold mt-3 text-xl cursor-pointer"
+          @click="onAboutAppClick">Описание функциональных характеристик</p>
         <p
-          class="font-semibold mt-6 text-xl cursor-pointer"
+          class="font-semibold mt-3 text-xl cursor-pointer"
           @click="onRPClick">Руководство пользователя</p>
+        <p
+          class="font-semibold mt-3 text-xl cursor-pointer"
+          @click="onPolicClick">Политика конфиденциальности</p>
+        <p
+          class="font-semibold mt-3 text-xl cursor-pointer"
+          @click="onDataClick">Согласие на обработку персональных данных</p>
       </div>
       <div>
         <p
@@ -55,6 +61,12 @@
           <p
             class="font-semibold text-xl">+7 (495) 532-02-59</p>
         </div>
+        <div
+          class="mt-6 font-semibold text-xl">
+          <p>ООО «АЛМАТЭК»</p>
+          <p>ОГРН: 1257700085500</p>
+          <p>ИНН: 9725180163</p>
+        </div>
       </div>
     </div>
     <div
@@ -74,10 +86,18 @@ function onLinkClick(name) {
 }
 
 function onAboutAppClick() {
-  window.open('/Описание_функциональных_характеристик_ПО_Building_Service_Life.pdf', '_blank')
+  window.open('/Описание функциональных характеристик (ПО Building Service Life).pdf', '_blank')
 }
 
 function onRPClick() {
   window.open('/Руководство_пользователя_ПО_Building_Service_Life.pdf', '_blank')
+}
+
+function onPolicClick() {
+  window.open('/Политика конфиденциальности в отношении обработки персональных данных.pdf', '_blank')
+}
+
+function onDataClick() {
+  window.open('/Согласие на обработку персональных данных.pdf', '_blank')
 }
 </script>

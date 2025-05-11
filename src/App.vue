@@ -46,6 +46,13 @@
       </div>
     </div>
   </Layout>
+      <!-- Баннер о куках -->
+      <div v-if="showCookieBanner" class="cookie-banner">
+      <p>
+        Мы используем <span class="underline cursor-pointer" @click="onCookieClick">файлы cookie</span> в системе BSL, чтобы делать ее лучше для Вас
+      </p>
+      <button @click="acceptCookies">Понятно</button>
+    </div>
 </template>
 
 <script setup>
@@ -104,6 +111,10 @@ async function scrollToLink(name) {
   } 
 }
 
+function onCookieClick() {
+  window.open('/Политика_конфиденциальности_в_отношении_обработки_персональных_данных.pdf', '_blank')
+}
+
 const isSticky = ref(false);
 const lastScrollY = ref(0);
 
@@ -121,18 +132,62 @@ const handleScroll = () => {
   lastScrollY.value = scrollY;
 };
 
+const showCookieBanner = ref(false)
+
 onMounted(async () => {
   window.addEventListener('scroll', handleScroll);
+  const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+  if (!cookiesAccepted) {
+    console.log(cookiesAccepted)
+    showCookieBanner.value = true; // Показываем баннер, если куки еще не приняты
+  }
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
+
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true'); // Сохраняем флаг принятия куков
+  showCookieBanner.value = false; // Скрываем баннер
+}
 </script>
 
 <style scoped>
 .header {
   transition: transform 0.5s ease; /* Плавный переход для transform и background-color */
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  background-color: #333333D9;
+  border-radius: 8px;
+  max-width: 70vw;
+  margin: 0 auto;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  z-index: 9999; /* Чтобы баннер был поверх всего */
+}
+
+.cookie-banner button {
+  background-color: #F2F4F7;
+  color: #28282D;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.cookie-banner button:hover {
+  background-color: #c4c4c4;
 }
 
 .header:not(.sticky) {
