@@ -70,7 +70,7 @@
       </div>
     </div>
     <div
-      class="absolute left-0 bottom-0">
+      class="absolute left-0 bottom-0 z-0">
       <img
         class="2xl:w-[900px]"
         src="/footer-background-down.svg"/>
